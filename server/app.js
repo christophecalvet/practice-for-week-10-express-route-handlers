@@ -56,12 +56,16 @@ app.get('/artists/latest/albums', (req, res) => {
   res.json(albumsForLatestArtist)
 });
 
-app.get('/artists/*', (req, res) => {
-  const artistId = req.url.split("/")[2]
-  res.json(getArtistByArtistId(artistId))
+// app.get('/artists/*', (req, res) => {
+//   const artistId = req.url.split("/")[2]
+//   res.json(getArtistByArtistId(artistId))
+
+// });
+
+app.get('/artists/:artistId', (req, res) => {
+  res.json(getArtistByArtistId(req.params.artistId))
 
 });
-
 
 
 // DO NOT MODIFY
